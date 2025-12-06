@@ -1,0 +1,27 @@
+# Source files (only ship compiled dist/)
+src/
+tests/
+.kiro/
+
+# Development files
+*.test.ts
+*.spec.ts
+vitest.config.ts
+tsconfig.json
+
+# Documentation
+CONTRIBUTING.md
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+*.log
+.DS_Store
+coverage/
+.env
