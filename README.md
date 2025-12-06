@@ -43,8 +43,8 @@ A secure, sandboxed Model Context Protocol (MCP) server that gives LLMs like Cla
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/mcp-workspace-server.git
-   cd mcp-workspace-server
+   git clone https://github.com/ShayYeffet/mcp_workspace_server.git
+   cd mcp_workspace_server
    ```
 
 2. **Install dependencies**
@@ -80,7 +80,7 @@ You should see all 109 tests passing! ✅
      "mcpServers": {
        "workspace": {
          "command": "node",
-         "args": ["/ABSOLUTE/PATH/TO/mcp-workspace-server/dist/index.js"],
+         "args": ["/ABSOLUTE/PATH/TO/mcp_workspace_server/dist/index.js"],
          "env": {
            "MCP_WORKSPACE_ROOT": "/path/to/your/project",
            "MCP_ALLOWED_COMMANDS": "npm,git,node",
@@ -114,7 +114,7 @@ You should see all 109 tests passing! ✅
      "cline.mcpServers": {
        "workspace": {
          "command": "node",
-         "args": ["/ABSOLUTE/PATH/TO/mcp-workspace-server/dist/index.js"],
+         "args": ["/ABSOLUTE/PATH/TO/mcp_workspace_server/dist/index.js"],
          "env": {
            "MCP_WORKSPACE_ROOT": "/path/to/your/project",
            "MCP_ALLOWED_COMMANDS": "npm,git,node"
@@ -135,16 +135,16 @@ When setting up the MCP server, you **must customize** these values in your conf
 #### 1. **Path to the Server** (Required)
 
 ```json
-"args": ["/ABSOLUTE/PATH/TO/mcp-workspace-server/dist/index.js"]
+"args": ["/ABSOLUTE/PATH/TO/mcp_workspace_server/dist/index.js"]
 ```
 
 **Replace with:**
-- **Windows**: `"C:\\Users\\YourName\\path\\to\\mcp-workspace-server\\dist\\index.js"`
-- **macOS/Linux**: `"/home/username/path/to/mcp-workspace-server/dist/index.js"`
+- **Windows**: `"C:\\Users\\YourName\\path\\to\\mcp_workspace_server\\dist\\index.js"`
+- **macOS/Linux**: `"/home/username/path/to/mcp_workspace_server/dist/index.js"`
 
 **How to find it:**
 ```bash
-# In the mcp-workspace-server directory, run:
+# In the mcp_workspace_server directory, run:
 pwd  # macOS/Linux
 cd   # Windows
 ```
@@ -213,7 +213,7 @@ Set maximum time for commands (in milliseconds):
   "mcpServers": {
     "workspace": {
       "command": "node",
-      "args": ["C:\\Users\\John\\mcp-workspace-server\\dist\\index.js"],
+      "args": ["C:\\Users\\John\\mcp_workspace_server\\dist\\index.js"],
       "env": {
         "MCP_WORKSPACE_ROOT": "C:\\Users\\John\\projects\\my-react-app",
         "MCP_ALLOWED_COMMANDS": "npm,git,node,yarn",
@@ -231,7 +231,7 @@ Set maximum time for commands (in milliseconds):
   "mcpServers": {
     "workspace": {
       "command": "node",
-      "args": ["/home/jane/mcp-workspace-server/dist/index.js"],
+      "args": ["/home/jane/mcp_workspace_server/dist/index.js"],
       "env": {
         "MCP_WORKSPACE_ROOT": "/home/jane/projects/data-analysis",
         "MCP_ALLOWED_COMMANDS": "python,pip,git,jupyter",
@@ -249,7 +249,7 @@ Set maximum time for commands (in milliseconds):
   "mcpServers": {
     "workspace": {
       "command": "node",
-      "args": ["/Users/alex/mcp-workspace-server/dist/index.js"],
+      "args": ["/Users/alex/mcp_workspace_server/dist/index.js"],
       "env": {
         "MCP_WORKSPACE_ROOT": "/Users/alex/code-to-review",
         "MCP_ALLOWED_COMMANDS": "",
@@ -270,7 +270,7 @@ You can configure multiple MCP servers for different projects:
   "mcpServers": {
     "project-a": {
       "command": "node",
-      "args": ["C:\\mcp-workspace-server\\dist\\index.js"],
+      "args": ["C:\\mcp_workspace_server\\dist\\index.js"],
       "env": {
         "MCP_WORKSPACE_ROOT": "C:\\projects\\project-a",
         "MCP_ALLOWED_COMMANDS": "npm,git"
@@ -278,7 +278,7 @@ You can configure multiple MCP servers for different projects:
     },
     "project-b": {
       "command": "node",
-      "args": ["C:\\mcp-workspace-server\\dist\\index.js"],
+      "args": ["C:\\mcp_workspace_server\\dist\\index.js"],
       "env": {
         "MCP_WORKSPACE_ROOT": "C:\\projects\\project-b",
         "MCP_ALLOWED_COMMANDS": "python,pip"
@@ -574,8 +574,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/mcp-workspace-server/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/YOUR_USERNAME/mcp-workspace-server/discussions)
+- **Issues**: [GitHub Issues](https://github.com/ShayYeffet/mcp_workspace_server/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/ShayYeffet/mcp_workspace_server/discussions)
 
 ---
 
