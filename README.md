@@ -27,7 +27,6 @@
 - [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Configuration Guide](#configuration-guide)
-- [Usage with Different AI Clients](#usage-with-different-ai-clients)
 - [Available Tools](#available-tools)
 - [Security](#security)
 - [Testing](#testing)
@@ -102,33 +101,6 @@ You should see all 109 tests passing! ✅
    "List all files in my workspace"
    "Create a new file called test.txt with 'Hello World'"
    ```
-
-### For Cline (VS Code) Users
-
-1. **Install Cline** extension from VS Code marketplace
-
-2. **Open VS Code Settings** (`Ctrl+,` or `Cmd+,`)
-
-3. **Search for "Cline"** and find "MCP Servers" section
-
-4. **Add this configuration** (or edit `settings.json`):
-
-   ```json
-   {
-     "cline.mcpServers": {
-       "workspace": {
-         "command": "node",
-         "args": ["/ABSOLUTE/PATH/TO/ultimate_mcp_server/dist/index.js"],
-         "env": {
-           "MCP_WORKSPACE_ROOT": "/path/to/your/project",
-           "MCP_ALLOWED_COMMANDS": "npm,git,node"
-         }
-       }
-     }
-   }
-   ```
-
-5. **Reload VS Code** and start using Cline!
 
 ## ⚙️ Configuration Guide
 
@@ -291,30 +263,6 @@ You can configure multiple MCP servers for different projects:
   }
 }
 ```
-
-## 🤖 Usage with Different AI Clients
-
-### Claude Desktop
-
-- **Best for**: General use, easiest setup
-- **Supports**: Claude models only
-- **Config location**: See [Quick Start](#quick-start)
-
-### Cline (VS Code Extension)
-
-- **Best for**: Coding workflows, integrated development
-- **Supports**: Claude, OpenAI, Ollama, and more
-- **Config location**: VS Code Settings → Cline → MCP Servers
-
-### Open WebUI
-
-- **Best for**: Web-based interface with Ollama
-- **Supports**: Ollama models
-- **Setup**: Configure in Open WebUI settings under MCP/Tools section
-
-### Custom Integration
-
-You can integrate this server with any MCP-compatible client. The server communicates via stdio using the MCP protocol.
 
 ## 🛠️ Ultimate Tool Arsenal - 36 Tools
 
@@ -595,7 +543,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 - **Issues**: [GitHub Issues](https://github.com/ShayYeffet/ultimate_mcp_server/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/ShayYeffet/ultimate_mcp_server/discussions)
 
 ---
 
