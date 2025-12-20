@@ -166,3 +166,54 @@ export async function resolveSafePath(
   
   return resolvedPath;
 }
+
+/**
+ * Synchronous path validation for simple cases
+ * @param requestedPath - The requested path (relative or absolute)
+ * @param workspaceRoot - The workspace root directory (absolute path)
+ * @returns Resolved absolute path within workspace
+ * @throws Error if path escapes workspace or contains security violations
+ */
+export function validatePath(requestedPath: string, workspaceRoot: string): string {
+  // Validate inputs
+  if (!workspaceRoot) {
+    throw createInvalidInputError('Workspace root cannot be empty');
+  }
+  
+  if (!requestedPath) {
+    throw createInvalidInputError('Requested path cannot be empty');
+  }
+  
+  // Ensure workspace root is absolute
+  const absoluteRoot = path.resolve(workspaceRoot);
+  
+  // Handle absolute paths
+  if (path.isAbsolute(requestedPath)) {
+    const normalizedRequested = path.normalize(requestedPath);
+    const normalizedRoot = path.normalize(absoluteRoot);
+    
+    if (!isPathSafe(normalizedRoot, normalizedRequested)) {
+      throw createSecurityError(
+        `Path '${requestedPath}' is outside the workspace boundary`,
+        { requestedPath, workspaceRoot: normalizedRoot }
+      );
+    }
+    
+    return normalizedRequested;
+  }
+  
+  // Join relative path with workspace root
+  const joinedPath = path.join(absoluteRoot, requestedPath);
+  const normalizedPath = path.normalize(joinedPath);
+  const normalizedRoot = path.normalize(absoluteRoot);
+  
+  // Check if normalized path is within workspace
+  if (!isPathSafe(normalizedRoot, normalizedPath)) {
+    throw createSecurityError(
+      `Path '${requestedPath}' attempts to traverse outside the workspace boundary`,
+      { requestedPath, normalizedPath, workspaceRoot: normalizedRoot }
+    );
+  }
+  
+  return normalizedPath;
+}

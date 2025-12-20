@@ -1,22 +1,26 @@
-# MCP Workspace Server
+# 🏆 ULTIMATE MCP Workspace Server
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)
+[![Tools](https://img.shields.io/badge/Tools-36-brightgreen.svg)](https://github.com/ShayYeffet/ultimate_mcp_server)
+[![Categories](https://img.shields.io/badge/Categories-15+-blue.svg)](https://github.com/ShayYeffet/ultimate_mcp_server)
 
-A secure, sandboxed Model Context Protocol (MCP) server that gives LLMs like Claude, ChatGPT, and local models (via Ollama) controlled file system access to build and manage projects.
+**The Most Comprehensive MCP Server Ever Created** - 36 professional tools across 15+ categories for development, DevOps, data processing, and automation. Transform Claude Desktop into the ultimate development environment!
 
-## 🌟 Features
+## 🌟 Ultimate Features
 
-- 🔒 **Secure Sandboxing**: All file operations strictly confined to a designated workspace directory
-- 📁 **Complete File Operations**: Read, write, list, delete files and directories
-- 🔧 **Command Execution**: Run allowed build and test commands (npm, git, etc.)
-- 🛡️ **Path Traversal Protection**: Comprehensive security against directory escape attempts
-- 🔄 **Atomic Operations**: Safe file writes that prevent partial updates
-- 📝 **Patch Support**: Apply targeted file modifications without rewriting entire files
-- 🚫 **Read-Only Mode**: Optional mode to prevent any write operations
-- 📊 **Structured Logging**: Configurable logging for debugging and monitoring
-- ✅ **Fully Tested**: 109 passing tests including property-based tests
+- 🏆 **36 Comprehensive Tools**: The most complete MCP server available
+- 🔒 **Enterprise Security**: Military-grade sandboxing and path validation
+- 🚀 **15+ Categories**: File ops, Git, Docker, cloud storage, databases, and more
+- 🌐 **Multi-Platform**: Windows, macOS, and Linux support
+- ☁️ **Multi-Cloud**: AWS S3, Google Cloud, Azure integration
+- 🐳 **DevOps Ready**: Docker management, package managers, CI/CD tools
+- 📊 **Data Processing**: CSV, JSON, databases, web scraping, image processing
+- 🔐 **Security Suite**: Encryption, hashing, secure key generation
+- ⏰ **Automation**: Task scheduling, notifications, webhooks
+- 🎨 **Code Quality**: Formatting, linting, analysis tools
+- ✅ **Production Ready**: 109+ passing tests, comprehensive error handling
 
 ## 📋 Table of Contents
 
@@ -43,8 +47,8 @@ A secure, sandboxed Model Context Protocol (MCP) server that gives LLMs like Cla
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/ShayYeffet/mcp_workspace_server.git
-   cd mcp_workspace_server
+   git clone https://github.com/ShayYeffet/ultimate_mcp_server.git
+   cd ultimate_mcp_server
    ```
 
 2. **Install dependencies**
@@ -80,7 +84,7 @@ You should see all 109 tests passing! ✅
      "mcpServers": {
        "workspace": {
          "command": "node",
-         "args": ["/ABSOLUTE/PATH/TO/mcp_workspace_server/dist/index.js"],
+         "args": ["/ABSOLUTE/PATH/TO/ultimate_mcp_server/dist/index.js"],
          "env": {
            "MCP_WORKSPACE_ROOT": "/path/to/your/project",
            "MCP_ALLOWED_COMMANDS": "npm,git,node",
@@ -114,7 +118,7 @@ You should see all 109 tests passing! ✅
      "cline.mcpServers": {
        "workspace": {
          "command": "node",
-         "args": ["/ABSOLUTE/PATH/TO/mcp_workspace_server/dist/index.js"],
+         "args": ["/ABSOLUTE/PATH/TO/ultimate_mcp_server/dist/index.js"],
          "env": {
            "MCP_WORKSPACE_ROOT": "/path/to/your/project",
            "MCP_ALLOWED_COMMANDS": "npm,git,node"
@@ -135,16 +139,16 @@ When setting up the MCP server, you **must customize** these values in your conf
 #### 1. **Path to the Server** (Required)
 
 ```json
-"args": ["/ABSOLUTE/PATH/TO/mcp_workspace_server/dist/index.js"]
+"args": ["/ABSOLUTE/PATH/TO/ultimate_mcp_server/dist/index.js"]
 ```
 
 **Replace with:**
-- **Windows**: `"C:\\Users\\YourName\\path\\to\\mcp_workspace_server\\dist\\index.js"`
-- **macOS/Linux**: `"/home/username/path/to/mcp_workspace_server/dist/index.js"`
+- **Windows**: `"C:\\Users\\YourName\\path\\to\\ultimate_mcp_server\\dist\\index.js"`
+- **macOS/Linux**: `"/home/username/path/to/ultimate_mcp_server/dist/index.js"`
 
 **How to find it:**
 ```bash
-# In the mcp_workspace_server directory, run:
+# In the ultimate_mcp_server directory, run:
 pwd  # macOS/Linux
 cd   # Windows
 ```
@@ -213,7 +217,7 @@ Set maximum time for commands (in milliseconds):
   "mcpServers": {
     "workspace": {
       "command": "node",
-      "args": ["C:\\Users\\John\\mcp_workspace_server\\dist\\index.js"],
+      "args": ["C:\\Users\\John\\ultimate_mcp_server\\dist\\index.js"],
       "env": {
         "MCP_WORKSPACE_ROOT": "C:\\Users\\John\\projects\\my-react-app",
         "MCP_ALLOWED_COMMANDS": "npm,git,node,yarn",
@@ -231,7 +235,7 @@ Set maximum time for commands (in milliseconds):
   "mcpServers": {
     "workspace": {
       "command": "node",
-      "args": ["/home/jane/mcp_workspace_server/dist/index.js"],
+      "args": ["/home/jane/ultimate_mcp_server/dist/index.js"],
       "env": {
         "MCP_WORKSPACE_ROOT": "/home/jane/projects/data-analysis",
         "MCP_ALLOWED_COMMANDS": "python,pip,git,jupyter",
@@ -249,7 +253,7 @@ Set maximum time for commands (in milliseconds):
   "mcpServers": {
     "workspace": {
       "command": "node",
-      "args": ["/Users/alex/mcp_workspace_server/dist/index.js"],
+      "args": ["/Users/alex/ultimate_mcp_server/dist/index.js"],
       "env": {
         "MCP_WORKSPACE_ROOT": "/Users/alex/code-to-review",
         "MCP_ALLOWED_COMMANDS": "",
@@ -270,7 +274,7 @@ You can configure multiple MCP servers for different projects:
   "mcpServers": {
     "project-a": {
       "command": "node",
-      "args": ["C:\\mcp_workspace_server\\dist\\index.js"],
+      "args": ["C:\\ultimate_mcp_server\\dist\\index.js"],
       "env": {
         "MCP_WORKSPACE_ROOT": "C:\\projects\\project-a",
         "MCP_ALLOWED_COMMANDS": "npm,git"
@@ -278,7 +282,7 @@ You can configure multiple MCP servers for different projects:
     },
     "project-b": {
       "command": "node",
-      "args": ["C:\\mcp_workspace_server\\dist\\index.js"],
+      "args": ["C:\\ultimate_mcp_server\\dist\\index.js"],
       "env": {
         "MCP_WORKSPACE_ROOT": "C:\\projects\\project-b",
         "MCP_ALLOWED_COMMANDS": "python,pip"
@@ -312,102 +316,118 @@ You can configure multiple MCP servers for different projects:
 
 You can integrate this server with any MCP-compatible client. The server communicates via stdio using the MCP protocol.
 
-## 🛠️ Available Tools
+## 🛠️ Ultimate Tool Arsenal - 36 Tools
 
-The server exposes these tools to AI clients:
+### 📁 Core File Operations (7 Tools)
+- **list_files** - List directory contents with filtering and sorting
+- **read_file** - Read file contents with encoding support  
+- **write_file** - Create or update files atomically
+- **delete_file** - Delete files or directories safely
+- **create_folder** - Create directories with parent creation
+- **apply_patch** - Apply unified diff patches to files
+- **run_command** - Execute shell commands securely
 
-### `list_files`
-List files and directories in the workspace.
+### 🔍 Advanced File Operations (5 Tools)
+- **search_files** - Grep-like text search across files with patterns
+- **find_files** - Find files by name, pattern, size, date, extension
+- **copy_file** - Copy files and directories recursively
+- **move_file** - Move or rename files and folders
+- **get_file_info** - Detailed file metadata, checksums, permissions
 
-**Parameters:**
-- `path` (optional): Relative path to list
-- `recursive` (optional): Include nested directories
+### 📦 Archive & Compression (2 Tools)
+- **compress_files** - Create ZIP/TAR/GZ archives with compression
+- **extract_archive** - Extract compressed archives safely
 
-**Example:**
+### 🌐 Network Operations (1 Tool)
+- **http_request** - Full HTTP client with all methods, headers, timeouts
+
+### 🔧 Git Operations (4 Tools)
+- **git_status** - Repository status, changes, branch information
+- **git_diff** - Show differences between commits, branches, files
+- **git_log** - View commit history with filters and formatting
+- **git_branch** - Branch management, creation, deletion, listing
+
+### 💻 System Operations (3 Tools)
+- **system_info** - CPU, memory, disk, network, OS information
+- **list_processes** - Show running processes with resource usage
+- **kill_process** - Terminate processes by PID or name
+
+### 🗄️ Database Operations (1 Tool)
+- **database_query** - Execute SQL queries on SQLite databases
+
+### 🖼️ Image Processing (1 Tool)
+- **image_process** - Resize, crop, rotate, convert image formats
+
+### 📄 PDF Manipulation (1 Tool)
+- **pdf_manipulate** - Extract text, get info, merge, split PDFs
+
+### 🔐 Encryption & Security (1 Tool)
+- **encrypt_decrypt** - AES-256 encryption, hashing (SHA-256/512, MD5), key generation
+
+### ⏰ Task Scheduling (1 Tool)
+- **schedule_task** - Schedule commands with cron/Windows Task Scheduler
+
+### 📢 Notifications (1 Tool)
+- **send_notification** - System notifications, webhooks, email alerts
+
+### 📝 Text Processing (1 Tool)
+- **text_process** - Analyze, transform, extract patterns, compare, generate text
+
+### 📊 Data Processing (2 Tools)
+- **csv_process** - Read, write, transform, analyze, filter, merge, split CSV files
+- **json_process** - Parse, validate, transform, merge, extract, minify, prettify JSON
+
+### 🕷️ Web Scraping (1 Tool)
+- **web_scrape** - Fetch HTML, extract elements, links, images, text, metadata
+
+### 🐳 Docker Management (1 Tool)
+- **docker_manage** - Manage containers, images, networks, volumes, logs, exec
+
+### ☁️ Cloud Storage (1 Tool)
+- **cloud_storage** - Upload, download, list, delete files on AWS S3, GCP, Azure
+
+### 📦 Package Management (1 Tool)
+- **package_manager** - Install, uninstall, update packages with npm, yarn, pip, composer, gem, cargo, go
+
+### 🎨 Code Formatting (1 Tool)
+- **code_format** - Format, lint, analyze, fix code with prettier, eslint, black, etc.
+
+## 💡 Example Commands
+
+### Development Workflow
 ```
-"List all TypeScript files in the src directory"
+"Search for all TODO comments in TypeScript files"
+"Show git status and list all modified files"
+"Format all JavaScript files with prettier"
+"Create a ZIP archive of the src folder"
+"Run npm install and build the project"
 ```
 
-### `read_file`
-Read the contents of a file.
-
-**Parameters:**
-- `path` (required): Relative path to the file
-
-**Example:**
+### System Administration
 ```
-"Read the package.json file"
+"Show system information including CPU and memory usage"
+"List all processes using more than 100MB of memory"
+"Schedule a daily backup at 2 AM"
+"Send a notification when the deployment completes"
+"Kill the process using port 3000"
 ```
 
-### `write_file`
-Create or overwrite a file.
-
-**Parameters:**
-- `path` (required): Relative path for the file
-- `content` (required): File content
-- `createDirectories` (optional): Create parent directories
-
-**Example:**
+### Data & Content Processing
 ```
-"Create a new file src/utils/helper.ts with a function to format dates"
+"Query the database for all users created this month"
+"Resize all images in this folder to 800x600"
+"Extract text from this PDF and save to a file"
+"Analyze this CSV file and show statistics"
+"Scrape product data from this website"
 ```
 
-### `delete_file`
-Delete a file or empty directory.
-
-**Parameters:**
-- `path` (required): Relative path to delete
-
-**Example:**
+### Cloud & DevOps
 ```
-"Delete the old-config.json file"
-```
-
-### `create_folder`
-Create a directory and its parents.
-
-**Parameters:**
-- `path` (required): Relative path for the directory
-
-**Example:**
-```
-"Create a folder structure: src/components/ui"
-```
-
-### `apply_patch`
-Apply a patch to modify an existing file.
-
-**Parameters:**
-- `path` (required): Relative path to the file
-- `patch` (required): Patch in custom format
-
-**Patch Format:**
-```
-<<<OLD
-old content to replace
-===
-new content
->>>NEW
-```
-
-**Example:**
-```
-"Change the port from 3000 to 8080 in the config file"
-```
-
-### `run_command`
-Execute an allowed command.
-
-**Parameters:**
-- `command` (required): Command name (must be in allowed list)
-- `args` (optional): Command arguments
-- `cwd` (optional): Working directory
-- `timeoutMs` (optional): Timeout override
-
-**Example:**
-```
-"Run npm install"
-"Run the tests with npm test"
+"Upload build artifacts to AWS S3"
+"List all running Docker containers"
+"Install dependencies with npm and pip"
+"Make a POST request to the API with this data"
+"Encrypt sensitive files with AES-256"
 ```
 
 ## 🔒 Security
@@ -574,8 +594,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/ShayYeffet/mcp_workspace_server/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/ShayYeffet/mcp_workspace_server/discussions)
+- **Issues**: [GitHub Issues](https://github.com/ShayYeffet/ultimate_mcp_server/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/ShayYeffet/ultimate_mcp_server/discussions)
 
 ---
 
